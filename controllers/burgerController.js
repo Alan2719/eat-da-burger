@@ -9,9 +9,12 @@ var burger = require("../models/burger.js");
 //Route to get all the burger names
 router.get("/",(req,res)=>{
     burger.selectAll((data)=>{
+
+      //let arrayData = data.map(elem=> {return {id:elem.id, name:elem.name,devour:elem.devour}} )
         let list = {
-            burgerList:data
+            burgersList:data
         }
+     
         //console.log("List of burgers",list.burgerList);
         console.log("Burger List",list);
         res.render("index", list);
