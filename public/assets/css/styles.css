@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(255, 157, 0, 0.801);
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    margin: 20px auto;
+    width: 60%;
+}
+
+.form-control {
+    width: 50%;
+    margin: auto;
+}
+
+.create-form #submit {
+    margin: auto;
+}

@@ -6,7 +6,8 @@ let burger = {
             cb(res);
         })
     },
-    insertOne:function(cols,vals,cb) {   
+    insertOne:function(cols,vals,cb) {  
+        //console.log("Column",cols,"Values",vals); 
         orm.insertOne("burger",cols,vals,cb,(res)=>{ //Send table name, column, values, callback function
             cb(res);
         }) 
