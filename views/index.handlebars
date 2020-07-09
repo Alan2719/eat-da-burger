@@ -1,4 +1,6 @@
-<img src="../public/assets/images/burger.jpg">
+<div class="container box">
+    <img src="../public/assets/images/burger.jpg">
+</div>
 
 <h1>Eat-Da-Burger!</h1>
 
@@ -8,7 +10,7 @@
             <ul>
                 {{#each burgersList}}
                     {{#unless devour}}
-                        {{> burger/burger-block eat = false}}
+                        {{> burger/burger-block eat = true}}
                     {{/unless}}
                 {{/each}}
             </ul>
@@ -18,7 +20,7 @@
             <ul>
                 {{#each burgersList}}
                     {{#if devour}}
-                        {{> burger/burger-block eat = true}}
+                        {{> burger/burger-block eat = false}}
                     {{/if}}
                 {{/each}}   
             </ul>

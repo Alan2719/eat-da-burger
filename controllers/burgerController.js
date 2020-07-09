@@ -23,7 +23,7 @@ router.get("/",(req,res)=>{
 
 //Route to post a new burger name
 router.post("/api/burgers",(req,res)=>{
-    burger.insertOne(["name","devour"],[req.body.name, false],
+    burger.insertOne(["name","devour"],[req.body.name, req.body.devour],
     (result)=>{
         //Send back the id of the new burger!
         res.json({ id: result.insertedId });
@@ -32,9 +32,12 @@ router.post("/api/burgers",(req,res)=>{
 
 //Indicate if a burger has been devoured
 router.put("/api/burgers/:id",(req,res)=>{
-    let condition = req.params.id + " = id";
-    burger.updateOne({devour: req.body.devour},condition,(data)=>{
-        if (res.changedRows === 0) {
+    let condition =  "id = " + req.params.id;
+    //console.log("Condition",condition);
+    console.log("REQ PARAMS",req.params);
+
+    burger.updateOne({devour: req.body.devour},condition,function(data){
+        if (res.changedRows == 0) {
             return res.status(404).end();
         } else {
             res.status(200).end();
