@@ -12,7 +12,7 @@ let burger = {
             cb(res);
         }) 
     },
-    updateOne:function(ColVals,condition,cb){
+    updateOne: function(ColVals,condition,cb){
         orm.updateOne("burger",ColVals,condition,cb,(res)=>{
             cb(res);
         })

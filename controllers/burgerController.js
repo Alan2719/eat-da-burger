@@ -33,11 +33,13 @@ router.post("/api/burgers",(req,res)=>{
 //Indicate if a burger has been devoured
 router.put("/api/burgers/:id",(req,res)=>{
     let condition =  "id = " + req.params.id;
-    //console.log("Condition",condition);
-    console.log("REQ PARAMS",req.params);
+    console.log("Condition",condition);
+    //console.log("REQ PARAMS",req.params);
 
-    burger.updateOne({devour: req.body.devour},condition,function(data){
-        if (res.changedRows == 0) {
+    burger.updateOne({
+        devour: req.body.devour
+    },condition,function(data){
+        if (data.changedRows == 0) {
             return res.status(404).end();
         } else {
             res.status(200).end();

@@ -7,7 +7,9 @@ $(function(){
             devour: newDevour
         };
 
-        console.log(newDevourState);
+        console.log(event);
+
+        console.log(id);
         // Send the PUT request.
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
@@ -26,7 +28,7 @@ $(function(){
         let newBurger = {
             name: $("#exampleFormControlTextarea1").val().trim(),
             //devour: $("[name=devour]:checked").val().trim()
-            devour: 1
+            devour: 0
         };
         console.log(newBurger);
         $.ajax("/api/burgers",{
