@@ -1,10 +1,11 @@
 $(function(){
-    $(".devour-burger").on('click',(event)=>{
-        var id = $(this).data("id");
+    $(".devour-burger").on('click',function(){
+        console.log(this)
+        var id = $(this).attr("data-id");
         var newDevour = $(this).data("devour");
 
         var newDevourState = {
-            devour: newDevour
+            devour: 1
         };
 
         console.log(event);
