@@ -1,4 +1,4 @@
-var express = require("express");
+let express = require("express");
 
 var PORT = process.env.PORT || 3000;
 
